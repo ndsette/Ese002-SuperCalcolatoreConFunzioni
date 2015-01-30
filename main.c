@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "mialibreria.h"
 
 /* PROTOTIPI DELLE FUNZIONI */
 /* La dichiarazione e la definizione di una funzione possono essere separate.
@@ -8,7 +9,7 @@
  * utilizzo: nome, numero e tipo dei parametri di ingresso, tipo del (unico)
  * parametro di uscita.
  * 
- * La definizione della funzione è ottenuta mediante la definizione del suo
+ * La definizione della funzione ÃƒÂ¨ ottenuta mediante la definizione del suo
  * corpo. La parte definitoria si trova dopo la funzione main. 
  */
 float somma(float a, float b);
@@ -32,7 +33,7 @@ int main(int argc, char** argv) {
     scanf("%f", &b);
     
     getchar();
-    /* La presenza di questa chiamata alla funzione getchar() è dovuto al funzionamento
+    /* La presenza di questa chiamata alla funzione getchar() ÃƒÂ¨ dovuto al funzionamento
      * "buffered line" definito dallo standard POSIX.
      */
     
@@ -42,30 +43,30 @@ int main(int argc, char** argv) {
     puts("3 -  Moltiplicazione a*b");
     puts("4 -  Divisione a/b con risultato frazionale");
     puts("5 -  Disione a/b con parte intera e parte frazionale");
-    puts("6 -  Elevamento a potenza a^b (l'esponente è troncato ad intero)");
+    puts("6 -  Elevamento a potenza a^b (l'esponente ÃƒÂ¨ troncato ad intero)");
     scelta = getchar();
-    scelta = scelta - '0';
+    scelta=scelta - '0';
     
     switch(scelta) {
         case 1:
-            risultato = somma(a, b);
+            risultato=somma(a, b);
             printf("%f+%f=%f\n", a, b, risultato);
             break;
         case 2:
-            risultato = sottrazione(a, b);
+            risultato=sottrazione(a,b);
             printf("%f-%f=%f\n", a, b, risultato);
             break;
         case 3:
-            risultato = prodotto(a, b);
+            risultato=prodotto(a,b);
             printf("%f*%f=%f\n", a, b, risultato);
             break;
         case 4:
-            risultato = divisione(a, b);
+            risultato=divisione(a, b);
             printf("%f/%f=%f\n", a, b, risultato);
             break;
         case 5:
-            q = quoziente((int)a, (int)b);
-            f = frazionale((int)a, (int)b);
+            q=quoziente((int)a,(int)b);
+            f=frazionale((int)a,(int)b);
             printf("%f/%f= %d (intera) e %f (frazionale)\n", a, b, q, f);
             break;
         case 6:
@@ -76,39 +77,4 @@ int main(int argc, char** argv) {
             puts("Nuove oprazioni saranno disponibili a breve!\n");        
     }
     return (EXIT_SUCCESS);
-}
-
-float somma(float a, float b) {
-    // TODO Definire il corpo della funzione
-    return 0;
-}
-
-float sottrazione(float a, float b) {
-    // TODO Definire il corpo della funzione
-    return 0;
-}
-
-float prodotto(float a, float b) {
-    // TODO Definire il corpo della funzione
-    return 0;
-}
-
-float divisione(float a, float b) {
-    // TODO Definire il corpo della funzione
-    return 0;
-}
-
-int quoziente(int a, int b) {
-    // TODO Definire il corpo della funzione
-    return 0;
-}
-
-float frazionale(int a, int b) {
-    // TODO Definire il corpo della funzione
-    return 0;
-}
-
-float potenza(float base, int esponente) {
-    // TODO Definire il corpo della funzione
-    return 0;
 }
